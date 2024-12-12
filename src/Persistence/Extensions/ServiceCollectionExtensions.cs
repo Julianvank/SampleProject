@@ -2,7 +2,7 @@ using Application.UnitOfWork;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Persistence;
+namespace Persistence.Extensions;
 
 public static class ServiceCollectionExtensions
 {

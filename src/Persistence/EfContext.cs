@@ -1,5 +1,6 @@
 using Domain;
 using Microsoft.EntityFrameworkCore;
+using Persistence.Extensions.Configuration;
 
 namespace Persistence;
 
@@ -16,11 +17,8 @@ public class EfContext : DbContext
     
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<Stock>().HasKey(id => id.Id);
-        modelBuilder.Entity<Stock>().Property(id => id.Id).ValueGeneratedOnAdd();
-        modelBuilder.Entity<Indice>().HasKey(id => id.Id);
-        modelBuilder.Entity<Indice>().Property(id => id.Id).ValueGeneratedOnAdd();
-        modelBuilder.Entity<Indice>().HasMany(d => d.Stocks);
+        modelBuilder.Entity<Stock>().ConfigureModel();
+        modelBuilder.Entity<Indice>().ConfigureModel();
     }
 
     public IQueryable<T> GetToDoSet<T>() where T : class
