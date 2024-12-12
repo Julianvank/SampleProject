@@ -1,7 +1,6 @@
 ﻿using Application;
 using Application.UnitOfWork;
 using Microsoft.Extensions.DependencyInjection;
-using Persistence;
 using Persistence.Extensions;
 
 namespace Console;
